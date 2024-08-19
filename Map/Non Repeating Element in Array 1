@@ -1,0 +1,16 @@
+public class Program {
+    public static void main(String[] args) {
+        Integer[] arr = {1,7,8,0, 1,3, 3, 0, 8, 7};
+        Map<Integer, Integer> countMap = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            countMap.put(arr[i], countMap.getOrDefault(arr[i], 0) + 1);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (countMap.get(arr[i]) == 1) {
+                System.out.println("non repeating :: " + arr[i]);
+                return;
+            }
+        }
+        System.out.println("all repeating ");
+    }
+}
